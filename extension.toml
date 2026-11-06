@@ -1,4 +1,4 @@
-id = "orthra"
+id = "orthra-lsp"
 name = "Orthra"
 description = "Spell checking for prose, comments, strings and the names you declare: fast, quiet, and local."
 version = "0.1.0"

@@ -25,6 +25,7 @@ languages = [
   "YAML",
   "JSON",
   "JSONC",
+  "CSS",
 ]
 
 [language_servers.orthra.language_ids]
@@ -41,3 +42,4 @@ languages = [
 "YAML" = "yaml"
 "JSON" = "json"
 "JSONC" = "jsonc"
+"CSS" = "css"

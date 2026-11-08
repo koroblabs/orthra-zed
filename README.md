@@ -84,8 +84,7 @@ refuses an endpoint on another machine unless the setting says `"allowRemote": t
 then names the endpoint instead of "local model".
 
 The built-in model (`rank`) and the one you run (`rewrite`) are independent: the first orders a
-word's corrections and cannot write, the second writes. Either, both or neither may be on. orthra
-0.1.0's `context.enabled` and `context.http` are no longer read, and the server says so.
+word's corrections and cannot write, the second writes. Either, both or neither may be on.
 
 ### Every exact fix on save
 

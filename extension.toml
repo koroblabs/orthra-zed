@@ -26,6 +26,19 @@ languages = [
   "JSON",
   "JSONC",
   "CSS",
+  "JavaScript",
+  "Shell Script",
+  "HTML",
+  "SCSS",
+  "LESS",
+  "SQL",
+  "Lua",
+  "Java",
+  "Kotlin",
+  "Swift",
+  "C",
+  "C++",
+  "Ruby",
 ]
 
 [language_servers.orthra.language_ids]
@@ -43,3 +56,16 @@ languages = [
 "JSON" = "json"
 "JSONC" = "jsonc"
 "CSS" = "css"
+"JavaScript" = "javascript"
+"Shell Script" = "shellscript"
+"HTML" = "html"
+"SCSS" = "scss"
+"LESS" = "less"
+"SQL" = "sql"
+"Lua" = "lua"
+"Java" = "java"
+"Kotlin" = "kotlin"
+"Swift" = "swift"
+"C" = "c"
+"C++" = "cpp"
+"Ruby" = "ruby"

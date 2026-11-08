@@ -2,7 +2,8 @@
 
 [orthra](https://github.com/koroblabs/orthra) is a spell-checking language server that is fast and
 quiet. It checks prose, and the comments, strings and declared names in code: Rust, TypeScript,
-Python, Go, PHP, Markdown, TOML, YAML, JSON, CSS, plain text and commit messages. A word your project
+JavaScript, Python, Go, PHP, Java, Kotlin, Swift, C, C++, Ruby, Lua, shell scripts, SQL, HTML, CSS,
+SCSS, LESS, Markdown, TOML, YAML, JSON, plain text and commit messages. A word your project
 declares, in its manifest or in its code, is a word, and it runs entirely on your machine.
 
 ## Install

@@ -39,9 +39,9 @@ All optional, in Zed's settings:
         "severity": "hint",
         "context": {
           // The built-in model, which reorders a word's corrections by its sentence.
-          "enabled": true,
-          // A model you run, for "Rewrite sentence" and "Rewrite selection": see below.
-          "http": { "model": "qwen2.5:3b", "endpoint": "http://127.0.0.1:11434/v1" },
+          "rank": true,
+          // A model you run, for "Rewrite" and "Rephrase": see below.
+          "rewrite": { "model": "qwen2.5:3b", "endpoint": "http://127.0.0.1:11434/v1" },
         },
       },
     },
@@ -51,9 +51,9 @@ All optional, in Zed's settings:
 
 ### Rewriting with a model you run
 
-With `context.http` set, the code-action menu offers **Rewrite sentence**, or **Rewrite selection**
-with text selected, and the model's answer replaces the text once you choose it. Any server with an
-OpenAI-compatible `/v1/chat/completions` works:
+With `context.rewrite` set, the code-action menu offers **Rewrite sentence**, and with text selected
+**Rewrite selection** and **Rephrase selection**. The model's answer replaces the text once you
+choose it. Any server with an OpenAI-compatible `/v1/chat/completions` works:
 
 | server                     | `endpoint`                  |
 | -------------------------- | --------------------------- |
@@ -61,10 +61,24 @@ OpenAI-compatible `/v1/chat/completions` works:
 | llama.cpp's `llama-server` | `http://127.0.0.1:8080/v1`  |
 | LM Studio                  | `http://127.0.0.1:1234/v1`  |
 
-The model corrects spelling and grammar and keeps the wording that is right. It never runs on its
-own and never changes what is reported. orthra refuses an endpoint on another machine unless the
-setting says `"allowRemote": true`, and the menu then names the endpoint instead of "local model".
-No API key is sent.
+**Rewrite** corrects spelling and grammar and keeps the wording that is right; **Rephrase** says the
+same thing more naturally. Neither runs on its own or changes what is reported.
+
+```jsonc
+"rewrite": {
+  "model": "qwen2.5:3b",
+  "apiKey": "...", // only for a server that asks for one
+  "prompts": { "rephrase": "Rephrase this more formally{language}. Reply with the text only." },
+}
+```
+
+A prompt of your own replaces orthra's, and `{language}` in it names the text's language. orthra
+refuses an endpoint on another machine unless the setting says `"allowRemote": true`, and the menu
+then names the endpoint instead of "local model".
+
+The built-in model (`rank`) and the one you run (`rewrite`) are independent: the first orders a
+word's corrections and cannot write, the second writes. Either, both or neither may be on. orthra
+0.1.0's `context.enabled` and `context.http` are no longer read, and the server says so.
 
 A project's own settings, the words it accepts and the files it ignores are in `orthra.toml` and
 `.orthra/words.txt`: see [orthra's README](https://github.com/koroblabs/orthra#configure).

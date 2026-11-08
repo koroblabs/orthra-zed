@@ -6,66 +6,132 @@ schema_version = 1
 authors = ["Korob Labs <opensource@koroblabs.com>"]
 repository = "https://github.com/koroblabs/orthra-zed"
 
-# Every language orthra has a host for, by Zed's name, with the language id orthra reads it as. A
-# language Zed knows only through another extension (PHP, TOML) is listed all the same: Zed starts
-# the server for it once that extension is installed.
+# Every language orthra has a host for, by Zed's name, with the language id orthra reads it as. The
+# names are the `name` in each language's `config.toml`, in Zed or in the extension that adds it
+# (checked 2026-11-09: C# is `CSharp`, Vue is `Vue.js`, reStructuredText is `reST`). A language Zed
+# knows only through another extension is listed all the same: Zed starts the server for it once
+# that extension is installed. Docker Compose files are YAML.
 [language_servers.orthra]
 name = "Orthra"
 languages = [
   "Plain Text",
   "Markdown",
+  "reST",
   "Git Commit",
   "Rust",
   "TypeScript",
   "TSX",
+  "JavaScript",
   "Python",
   "Go",
   "PHP",
-  "TOML",
-  "YAML",
-  "JSON",
-  "JSONC",
-  "CSS",
-  "JavaScript",
-  "Shell Script",
-  "HTML",
-  "SCSS",
-  "LESS",
-  "SQL",
-  "Lua",
   "Java",
   "Kotlin",
+  "Scala",
+  "Groovy",
   "Swift",
+  "Objective-C",
   "C",
   "C++",
+  "CSharp",
+  "FSharp",
+  "Dart",
+  "Zig",
   "Ruby",
+  "Lua",
+  "Elixir",
+  "Erlang",
+  "Haskell",
+  "OCaml",
+  "OCaml Interface",
+  "Elm",
+  "R",
+  "Julia",
+  "PowerShell",
+  "Shell Script",
+  "SQL",
+  "HTML",
+  "Vue.js",
+  "Svelte",
+  "CSS",
+  "SCSS",
+  "LESS",
+  "XML",
+  "Nix",
+  "HCL",
+  "Terraform",
+  "Terraform Vars",
+  "ini",
+  "Properties",
+  "TOML",
+  "YAML",
+  "Docker Compose",
+  "JSON",
+  "JSONC",
+  "Proto",
+  "GraphQL",
+  "Make",
+  "CMake",
+  "Dockerfile",
 ]
 
 [language_servers.orthra.language_ids]
 "Plain Text" = "plaintext"
 "Markdown" = "markdown"
+"reST" = "restructuredtext"
 "Git Commit" = "git-commit"
 "Rust" = "rust"
 "TypeScript" = "typescript"
 "TSX" = "typescriptreact"
+"JavaScript" = "javascript"
 "Python" = "python"
 "Go" = "go"
 "PHP" = "php"
-"TOML" = "toml"
-"YAML" = "yaml"
-"JSON" = "json"
-"JSONC" = "jsonc"
-"CSS" = "css"
-"JavaScript" = "javascript"
-"Shell Script" = "shellscript"
-"HTML" = "html"
-"SCSS" = "scss"
-"LESS" = "less"
-"SQL" = "sql"
-"Lua" = "lua"
 "Java" = "java"
 "Kotlin" = "kotlin"
+"Scala" = "scala"
+"Groovy" = "groovy"
 "Swift" = "swift"
+"Objective-C" = "objective-c"
 "C" = "c"
 "C++" = "cpp"
+"CSharp" = "csharp"
+"FSharp" = "fsharp"
+"Dart" = "dart"
+"Zig" = "zig"
 "Ruby" = "ruby"
+"Lua" = "lua"
+"Elixir" = "elixir"
+"Erlang" = "erlang"
+"Haskell" = "haskell"
+"OCaml" = "ocaml"
+"OCaml Interface" = "ocaml_interface"
+"Elm" = "elm"
+"R" = "r"
+"Julia" = "julia"
+"PowerShell" = "powershell"
+"Shell Script" = "shellscript"
+"SQL" = "sql"
+"HTML" = "html"
+"Vue.js" = "vue"
+"Svelte" = "svelte"
+"CSS" = "css"
+"SCSS" = "scss"
+"LESS" = "less"
+"XML" = "xml"
+"Nix" = "nix"
+"HCL" = "hcl"
+"Terraform" = "terraform"
+"Terraform Vars" = "terraform-vars"
+"ini" = "ini"
+"Properties" = "properties"
+"TOML" = "toml"
+"YAML" = "yaml"
+"Docker Compose" = "yaml"
+"JSON" = "json"
+"JSONC" = "jsonc"
+"Proto" = "proto"
+"GraphQL" = "graphql"
+"Make" = "makefile"
+"CMake" = "cmake"
+"Dockerfile" = "dockerfile"

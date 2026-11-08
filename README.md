@@ -1,13 +1,20 @@
 # orthra for Zed
 
 [orthra](https://github.com/koroblabs/orthra) is a spell-checking language server that is fast and
-quiet. It checks prose, and the comments, strings and declared names in code: Rust, TypeScript,
-JavaScript, Python, Go, PHP, Java, Kotlin, Swift, C, C++, Ruby, Lua, shell scripts, SQL, HTML, CSS,
-SCSS, LESS, Markdown, TOML, YAML, JSON, plain text and commit messages. A word your project
+quiet. It checks prose, and the comments, strings and declared names in code. A word your project
 declares, in its manifest or in its code, is a word, and it runs entirely on your machine.
 
-Zed has some of these languages only through their own extensions: PHP, TOML, HTML, SCSS, LESS, SQL,
-Lua, Java, Kotlin, Swift and Ruby. orthra checks such files once that extension is installed.
+- **Prose:** plain text, Markdown, reStructuredText and commit messages.
+- **Code:** Rust, TypeScript, JavaScript, Python, Go, PHP, Java, Kotlin, Scala, Groovy, Swift,
+  Objective-C, C, C++, C#, F#, Dart, Zig, Ruby, Lua, Elixir, Erlang, Haskell, OCaml, Elm, R, Julia,
+  PowerShell, shell scripts and SQL.
+- **The web:** HTML, Vue and Svelte components, CSS, SCSS and LESS.
+- **Data and configuration:** TOML, YAML (Docker Compose files too), JSON, XML, Protocol Buffers,
+  GraphQL, Nix, HCL and Terraform, INI and Java properties.
+- **Builds:** Makefiles, CMake and Dockerfiles.
+
+Zed has many of these languages only through their own extensions, PHP, Scala, C#, Elixir, Nix and
+Terraform among them. orthra checks such files once that extension is installed.
 
 ## Install
 
@@ -79,6 +86,18 @@ then names the endpoint instead of "local model".
 The built-in model (`rank`) and the one you run (`rewrite`) are independent: the first orders a
 word's corrections and cannot write, the second writes. Either, both or neither may be on. orthra
 0.1.0's `context.enabled` and `context.http` are no longer read, and the server says so.
+
+### Every exact fix on save
+
+A known typo's only correction, and a word typed in two scripts, can be applied across a file each
+time Zed formats it on save:
+
+```jsonc
+"code_actions_on_format": { "source.fixAll.orthra": true }
+```
+
+The same action, **Apply every exact fix in this file**, is in the code-action menu on such a
+finding.
 
 A project's own settings, the words it accepts and the files it ignores are in `orthra.toml` and
 `.orthra/words.txt`: see [orthra's README](https://github.com/koroblabs/orthra#configure).

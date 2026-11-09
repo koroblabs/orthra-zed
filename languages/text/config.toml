@@ -1,0 +1,39 @@
+# The project's text files that have no extension, which Zed gives no language and so no server:
+# a `LICENSE`, `AUTHORS`, `NOTICE`, `CHANGELOG`. orthra reads them as plain text. The language has
+# no grammar, as Zed's own Plain Text has none, and Zed's Plain Text cannot be given these names
+# by an extension. A suffix here is a whole file name or what follows a dot, never a pattern, so
+# `LICENSE-*` is listed by its usual names.
+name = "Text"
+path_suffixes = [
+  "AUTHORS",
+  "CHANGELOG",
+  "CHANGES",
+  "CONTRIBUTORS",
+  "COPYING",
+  "COPYING-GPL",
+  "COPYING-LGPL",
+  "COPYRIGHT",
+  "CREDITS",
+  "HISTORY",
+  "INSTALL",
+  "LICENCE",
+  "LICENSE",
+  "LICENSE-APACHE",
+  "LICENSE-APACHE-2.0",
+  "LICENSE-BSD",
+  "LICENSE-CC0",
+  "LICENSE-GPL",
+  "LICENSE-ISC",
+  "LICENSE-LGPL",
+  "LICENSE-MIT",
+  "LICENSE-MPL",
+  "LICENSE-UNICODE",
+  "LICENSE-ZLIB",
+  "MAINTAINERS",
+  "NEWS",
+  "NOTICE",
+  "README",
+  "THANKS",
+  "TODO",
+  "UNLICENSE",
+]

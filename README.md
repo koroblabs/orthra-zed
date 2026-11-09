@@ -4,7 +4,10 @@
 quiet. It checks prose, and the comments, strings and declared names in code. A word your project
 declares, in its manifest or in its code, is a word, and it runs entirely on your machine.
 
-- **Prose:** plain text, Markdown, reStructuredText and commit messages.
+- **Prose:** plain text, Markdown, reStructuredText and commit messages, and a project's text files
+  with no extension (`LICENSE`, `AUTHORS`, `NOTICE`, `CHANGELOG`), which this extension gives the
+  language **Text**, since Zed gives them none. Another name is one setting away:
+  `"file_types": { "Text": ["DISCLAIMER"] }`.
 - **Code:** Rust, TypeScript, JavaScript, Python, Go, PHP, Java, Kotlin, Scala, Groovy, Swift,
   Objective-C, C, C++, C#, F#, Dart, Zig, Ruby, Lua, Elixir, Erlang, Haskell, OCaml, Elm, R, Julia,
   PowerShell, shell scripts and SQL.

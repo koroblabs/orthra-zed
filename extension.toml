@@ -10,11 +10,13 @@ repository = "https://github.com/koroblabs/orthra-zed"
 # names are the `name` in each language's `config.toml`, in Zed or in the extension that adds it
 # (checked 2026-11-09: C# is `CSharp`, Vue is `Vue.js`, reStructuredText is `reST`). A language Zed
 # knows only through another extension is listed all the same: Zed starts the server for it once
-# that extension is installed. Docker Compose files are YAML.
+# that extension is installed. Docker Compose files are YAML, and `Text` is this extension's own
+# language for a project's text files with no extension (`languages/text/`).
 [language_servers.orthra]
 name = "Orthra"
 languages = [
   "Plain Text",
+  "Text",
   "Markdown",
   "reST",
   "Git Commit",
@@ -77,6 +79,7 @@ languages = [
 
 [language_servers.orthra.language_ids]
 "Plain Text" = "plaintext"
+"Text" = "plaintext"
 "Markdown" = "markdown"
 "reST" = "restructuredtext"
 "Git Commit" = "git-commit"
